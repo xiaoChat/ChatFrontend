@@ -1,3 +1,4 @@
+import Message from "element-plus/lib/el-message";
 import { defineComponent } from "vue";
 import style from "./s.module.scss";
 
@@ -5,11 +6,20 @@ export default defineComponent({
   name: "HelloWorld",
   props: {
     msg: String,
+    badge: {
+      type: Number,
+      default: () => 9
+    },
   },
   render() {
+    Message.info("asdfsfsdf")
     return (
       <div class={style}>
         <h1>{this.msg}</h1>
+        <el-input model="input" placeholder="请输入内容"></el-input>
+        <el-badge value={this.badge} max={10} class="item">
+          <el-button size="small">回复</el-button>
+        </el-badge>
         <p>
           For a guide and recipes on how to configure / customize this project,
           <br />
@@ -135,7 +145,7 @@ export default defineComponent({
             </a>
           </li>
         </ul>
-      </div>
+      </div >
     );
   },
 });

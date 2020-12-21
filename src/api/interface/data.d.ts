@@ -1,8 +1,11 @@
 export interface UserData extends UrlParams {
   id?: string;
+  chat_no?: number;
   username?: string;
-  age?: number;
-  address?: string;
+  password?: string;
+  avatar?: number;
+  nickname?: string;
+  user_state_id?: number;
 }
 
 export interface RespUserData {
