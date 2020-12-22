@@ -4,6 +4,10 @@ import { RespUserData, UserData } from './interface/data';
 import { GoodsData } from './interface/goods';
 import { Goods, User } from './path';
 
+export async function login(params: UserData): Promise<AxiosResponse<RespUserData>> {
+  return request(User.login, Methods.POST, params)
+}
+
 export async function getData(params: UrlParams): Promise<AxiosResponse<RespUserData>> {
   return request(User.list, Methods.GET, params)
 }

@@ -11,16 +11,16 @@ const data = Mock.mock({
 
 module.exports = [
   {
-    url: `/user/list`,
-    type: 'get',
+    url: `/user/login`,
+    type: 'post',
     response: config => {
       const items = data.items
       return {
         code: 200,
         msg: 'success',
         data: {
-          total: items.length,
-          items: items
+          token: "tokentokentokentoken",
+          userinfo: items
         }
       }
     }
