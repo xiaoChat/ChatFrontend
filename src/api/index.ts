@@ -1,25 +1,13 @@
 import { Methods, request } from "@/utils/request";
-import { AxiosResponse } from 'axios';
-import { RespUserData, UserData } from './interface/data';
-import { GoodsData } from './interface/goods';
-import { Goods, User } from './path';
+import { Resp } from "./interface/data";
+import { RespLogin, UserData } from "./interface/user";
+import { User } from './path';
 
-export async function login(params: UserData): Promise<AxiosResponse<RespUserData>> {
+export async function login(params: UserData): Promise<Resp<RespLogin>> {
   return request(User.login, Methods.POST, params)
+
 }
 
-export async function getData(params: UrlParams): Promise<AxiosResponse<RespUserData>> {
-  return request(User.list, Methods.GET, params)
-}
-
-export async function setData(params: UrlParams): Promise<AxiosResponse<UserData>> {
-  return request(User.add, Methods.POST, params)
-}
-
-export async function getGoods(): Promise<AxiosResponse<GoodsData>> {
-  return request(Goods.list, Methods.GET)
-}
-
-export async function setGoods(params: GoodsData): Promise<AxiosResponse<GoodsData>> {
-  return request(Goods.list, Methods.POST, params)
+export async function register(params: UserData): Promise<Resp<RespLogin>> {
+  return request(User.register, Methods.POST, params)
 }

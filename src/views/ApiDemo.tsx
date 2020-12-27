@@ -1,5 +1,4 @@
-import { getData } from '@/api';
-import { UserData } from '@/api/interface/data';
+import { UserData } from '@/api/interface/user';
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
@@ -10,10 +9,6 @@ export default defineComponent({
   },
   setup() {
     const user = ref<Array<UserData>>();
-    getData({}).then(res => {
-      user.value = res.data.data.items;
-      console.log(user.value);
-    })
     return {
       user
     }
