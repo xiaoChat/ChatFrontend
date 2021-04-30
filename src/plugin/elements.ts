@@ -1,6 +1,4 @@
-// 如果要使用.scss样式文件，则需要引入base.scss文件
-import "element-plus/packages/theme-chalk/src/base.scss";
-
+import { App } from "@vue/runtime-core";
 import {
   ElAlert,
   ElAside,
@@ -86,6 +84,9 @@ import {
   ElMessageBox,
   ElNotification
 } from "element-plus";
+
+// 如果要使用.scss样式文件，则需要引入base.scss文件
+import "element-plus/packages/theme-chalk/src/base.scss";
 
 const components = [
   ElAlert,
@@ -176,4 +177,13 @@ const plugins = [
   ElNotification
 ];
 
-export { components, plugins };
+export default function(app: App) {
+  components.forEach(component => {
+    app.component(component.name, component);
+  });
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  plugins.forEach((plugin: any) => {
+    app.use(plugin);
+  });
+}

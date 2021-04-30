@@ -22,14 +22,12 @@ export default defineComponent({
     });
 
     const onSubmit = async () => {
-      // proxy.$message.error("message");
-      // proxy.vnode.$Message.error("message");
       const { code, message, data } = await register(user.value);
       if (code == 0) {
         setAuthority(data.token, data.userinfo);
         proxy.$router.push("/");
       } else {
-        console.log(message);
+        proxy.$message.error(message);
       }
     };
 
