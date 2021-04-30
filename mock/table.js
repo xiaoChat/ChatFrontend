@@ -1,41 +1,45 @@
-const Mock = require('mockjs')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const Mock = require("mockjs");
 
 const data = Mock.mock({
-  'items|30': [{
-    id: '@id',
-    username: '@string(2,5)',
-    age: '@integer(10, 60)',
-    address: '@sentence(10, 20)'
-  }]
-})
+  token: "@string(32)",
+  "items|30": [
+    {
+      id: "@id",
+      username: "@string(2,5)",
+      age: "@integer(10, 60)",
+      address: "@sentence(10, 20)"
+    }
+  ]
+});
 
 module.exports = [
   {
     url: `/user/login`,
-    type: 'post',
-    response: config => {
-      const items = data.items
+    type: "post",
+    response: () => {
+      const { items, token } = data.items;
       return {
         code: 200,
-        msg: 'success',
+        msg: "success",
         data: {
-          token: "tokentokentokentoken",
+          token: token,
           userinfo: items
         }
-      }
+      };
     }
   },
   {
     url: `/user/add`,
-    type: 'post',
-    response: config => {
+    type: "post",
+    response: () => {
       return {
         code: 200,
-        msg: 'success',
+        msg: "success",
         data: {
           success: "success"
         }
-      }
+      };
     }
-  },
-]
+  }
+];

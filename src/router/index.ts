@@ -3,19 +3,19 @@ import MainLayout from "../layout/MainLayout";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/user/login",
+    path: "/login",
     name: "login",
     component: () => import("@/views/login/Login")
   },
   {
-    path: "/user/register",
+    path: "/register",
     name: "register",
     component: () => import("@/views/login/Register")
   },
   {
     path: "/",
     name: "index",
-    redirect: "/home",
+    redirect: "/home"
   },
   {
     path: "/home",
@@ -24,9 +24,9 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: "/users/register",
-        name: "register",
+        name: "usersregister",
         component: () => import("@/views/login/Register")
-      },
+      }
     ]
   },
   {

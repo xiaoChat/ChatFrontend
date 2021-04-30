@@ -1,46 +1,29 @@
-import Message from "element-plus/lib/el-message";
-import { defineComponent, ref } from "vue";
-import { UserData } from "@/api/interface/user";
-import { login } from "@/api";
-import router from "@/router";
-import { setAuthority } from "@/utils/authority";
+import { defineComponent } from "vue";
+import getUserComposables from "./composables/user";
 
 export default defineComponent({
   name: "Login",
   setup() {
-    const user = ref<UserData>({
-      username: "",
-      password: ""
-    });
+    const { proxy, user, onSubmitLogin, gotoRegister } = getUserComposables();
 
-    const onSubmit = async () => {
-      const { code, message, data } = await login(user.value);
-      if (code == 0) {
-        setAuthority(data.token, data.userinfo);
-        router.push("home");
-      } else {
-        Message.error(message);
-      }
-    };
+    const onSubmit = onSubmitLogin;
 
-    const goto = () => {
-      router.push("register");
-    };
+    const goto = gotoRegister;
 
     return () => (
       <>
         <el-row>
           <el-col sm={18}>LspChat</el-col>
           <el-col sm={4}>
-            <h1>登录</h1>
-            <el-form>
-              <el-form-item label="用户名">
-                <el-input type="text" vModel={user.value.username}></el-input>
+            <h1>{proxy.$t("login.name")}</h1>
+            <el-form onSubmit={goto}>
+              <el-form-item label={proxy.$t("login.username")}>
+                <el-input type="text" v-model={user.value.username}></el-input>
               </el-form-item>
               <el-form-item label="密码">
                 <el-input
                   type="password"
-                  vModel={user.value.password}
+                  v-model={user.value.password}
                 ></el-input>
               </el-form-item>
               <el-form-item>

@@ -1,43 +1,15 @@
-import {
-  ComponentInternalInstance,
-  ComponentPublicInstance,
-  defineComponent,
-  getCurrentInstance,
-  ref
-} from "vue";
-import { register } from "@/api";
-import { UserData } from "@/api/interface/user";
-import { setAuthority } from "@/utils/authority";
+import { defineComponent } from "vue";
+import getUserComposables from "./composables/user";
 import styles from "./Login.module.scss";
 
 export default defineComponent({
   name: "Login",
   setup() {
-    const proxy = (getCurrentInstance() as ComponentInternalInstance)
-      .proxy as ComponentPublicInstance;
-
-    const user = ref<UserData>({
-      username: "",
-      password: ""
-    });
-
-    const onSubmit = async () => {
-      const { code, message, data } = await register(user.value);
-      if (code == 0) {
-        setAuthority(data.token, data.userinfo);
-        proxy.$router.push("/");
-      } else {
-        proxy.$message.error(message);
-      }
-    };
-
-    const goto = () => {
-      proxy.$router.push("login");
-    };
+    const { proxy, user, onSubmitRegister, gotoLogin } = getUserComposables();
 
     return () => (
       <>
-        <el-row class={styles.echart}>
+        <el-row class={styles.show}>
           <el-col sm={18}>LspChat</el-col>
           <el-col sm={4}>
             <h1>{proxy.$t("register.name")}</h1>
@@ -52,10 +24,10 @@ export default defineComponent({
                 ></el-input>
               </el-form-item>
               <el-form-item>
-                <el-button type="primary" onClick={onSubmit}>
+                <el-button type="primary" onClick={onSubmitRegister}>
                   {proxy.$t("button.register")}
                 </el-button>
-                <el-button type="info" onClick={goto}>
+                <el-button type="info" onClick={gotoLogin}>
                   {proxy.$t("button.back")}
                 </el-button>
               </el-form-item>
