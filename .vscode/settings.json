@@ -1,16 +1,15 @@
 {
-    "eslint.validate": [
-        "vue",
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact"
-    ],
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "files.eol": "\n",
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true,
-    "typescript.tsdk": "./node_modules/typescript/lib"
+  "eslint.validate": [
+    "vue",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
 }
