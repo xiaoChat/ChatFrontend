@@ -8,7 +8,7 @@ export default defineComponent({
     badge: {
       type: Number,
       default: () => 9
-    },
+    }
   },
   render() {
     return (
@@ -20,13 +20,13 @@ export default defineComponent({
         </el-badge>
         <p>
           For a guide and recipes on how to configure / customize this project,
-            <br />
-            check out the
-            <a href="https://cli.vuejs.org" target="_blank" rel="noopener">
+          <br />
+          check out the
+          <a href="https://cli.vuejs.org" target="_blank" rel="noopener">
             vue-cli documentation
-            </a>
-            .
-          </p>
+          </a>
+          .
+        </p>
         <h3>Installed CLI Plugins</h3>
         <ul>
           <li>
@@ -36,7 +36,7 @@ export default defineComponent({
               rel="noopener"
             >
               babel
-              </a>
+            </a>
           </li>
           <li>
             <a
@@ -45,7 +45,7 @@ export default defineComponent({
               rel="noopener"
             >
               router
-              </a>
+            </a>
           </li>
           <li>
             <a
@@ -54,7 +54,7 @@ export default defineComponent({
               rel="noopener"
             >
               vuex
-              </a>
+            </a>
           </li>
           <li>
             <a
@@ -63,7 +63,7 @@ export default defineComponent({
               rel="noopener"
             >
               eslint
-              </a>
+            </a>
           </li>
           <li>
             <a
@@ -72,7 +72,7 @@ export default defineComponent({
               rel="noopener"
             >
               typescript
-              </a>
+            </a>
           </li>
         </ul>
         <h3>Essential Links</h3>
@@ -80,27 +80,27 @@ export default defineComponent({
           <li>
             <a href="https://vuejs.org" target="_blank" rel="noopener">
               Core Docs
-              </a>
+            </a>
           </li>
           <li>
             <a href="https://forum.vuejs.org" target="_blank" rel="noopener">
               Forum
-              </a>
+            </a>
           </li>
           <li>
             <a href="https://chat.vuejs.org" target="_blank" rel="noopener">
               Community Chat
-              </a>
+            </a>
           </li>
           <li>
             <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">
               Twitter
-              </a>
+            </a>
           </li>
           <li>
             <a href="https://news.vuejs.org" target="_blank" rel="noopener">
               News
-              </a>
+            </a>
           </li>
         </ul>
         <h3>Ecosystem</h3>
@@ -108,12 +108,12 @@ export default defineComponent({
           <li>
             <a href="https://router.vuejs.org" target="_blank" rel="noopener">
               vue-router
-              </a>
+            </a>
           </li>
           <li>
             <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">
               vuex
-              </a>
+            </a>
           </li>
           <li>
             <a
@@ -122,7 +122,7 @@ export default defineComponent({
               rel="noopener"
             >
               vue-devtools
-              </a>
+            </a>
           </li>
           <li>
             <a
@@ -131,7 +131,7 @@ export default defineComponent({
               rel="noopener"
             >
               vue-loader
-              </a>
+            </a>
           </li>
           <li>
             <a
@@ -140,10 +140,10 @@ export default defineComponent({
               rel="noopener"
             >
               awesome-vue
-              </a>
+            </a>
           </li>
         </ul>
-      </div >
-    )
-  },
+      </div>
+    );
+  }
 });

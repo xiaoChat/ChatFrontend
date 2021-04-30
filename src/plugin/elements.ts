@@ -1,3 +1,6 @@
+// 如果要使用.scss样式文件，则需要引入base.scss文件
+// import 'element-plus/packages/theme-chalk/src/base.scss'
+
 import {
   ElAlert,
   ElAside,
@@ -81,8 +84,8 @@ import {
   ElLoading,
   ElMessage,
   ElMessageBox,
-  ElNotification,
-} from 'element-plus';
+  ElNotification
+} from "element-plus";
 
 const components = [
   ElAlert,
@@ -162,18 +165,14 @@ const components = [
   ElTooltip,
   ElTransfer,
   ElTree,
-  ElUpload,
-]
+  ElUpload
+];
 
 const plugins = [
-  { '$InfiniteScroll': ElInfiniteScroll },
-  { '$Loading': ElLoading },
-  { '$Message': ElMessage },
-  { '$MessageBox': ElMessageBox },
-  { '$Notification': ElNotification },
-]
-
-export {
-  components,
-  plugins
-}
+  ElInfiniteScroll,
+  ElLoading,
+  ElMessage,
+  ElMessageBox,
+  ElNotification
+];
+export { components, plugins };

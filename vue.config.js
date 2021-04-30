@@ -1,33 +1,41 @@
-const dev = process.env.VUE_APP_DEV
+const dev = process.env.VUE_APP_DEV;
 
 let proxy = {};
-if (dev == 'mock') {
+if (dev == "mock") {
   // 非mock数据，跑代理
   proxy = {
     overlay: {
       warnings: false,
       errors: true
     },
-    before: require('./mock/mock-server.js'),
-  }
+    before: require("./mock/mock-server.js")
+  };
 } else {
   // dev
-  const api = process.env.VUE_APP_API_URL
+  const api = process.env.VUE_APP_API_URL;
   proxy = {
     proxy: {
-      '/api': {
+      "/api": {
         target: api,
         ws: true,
         changeOrigin: true,
         pathRewrite: {
-          '^/api': '/'
+          "^/api": "/"
         }
       }
     }
-  }
+  };
 }
 
 module.exports = {
   productionSourceMap: false,
   devServer: proxy,
-}
+  // global css
+  css: {
+    loaderOptions: {
+      scss: {
+        prependData: `@import "~@/style/global.scss";`
+      }
+    }
+  }
+};
