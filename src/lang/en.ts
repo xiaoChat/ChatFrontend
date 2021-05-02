@@ -23,5 +23,13 @@ export default {
     name: "Login",
     username: "Username",
     password: "Password"
+  },
+  rule: {
+    username: {
+      required: "User name is required!"
+    },
+    password: {
+      required: "Password is required!"
+    }
   }
 };

@@ -19,7 +19,25 @@ export default function getUserComposables() {
     password: ""
   });
 
+  const rules = ref();
+
   onMounted(() => {
+    rules.value = {
+      username: [
+        {
+          required: true,
+          message: proxy.$t("rule.username.required"),
+          trigger: "blur"
+        }
+      ],
+      password: [
+        {
+          required: true,
+          message: proxy.$t("rule.password.required"),
+          trigger: "blur"
+        }
+      ]
+    };
     console.log("user init");
   });
 
@@ -54,6 +72,7 @@ export default function getUserComposables() {
   return {
     proxy,
     user,
+    rules,
     onSubmitLogin,
     onSubmitRegister,
     gotoRegister,

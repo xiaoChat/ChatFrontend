@@ -1,4 +1,4 @@
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 import styles from "./Index.module.scss";
 
 export default defineComponent({
@@ -7,7 +7,10 @@ export default defineComponent({
     return () => (
       <>
         <div class={styles.menu}>
-          <div>hwa</div>
+          {/* Header */}
+          <div></div>
+          {/* chat */}
+          <div></div>
           <div>asdkkkkk skd fhjsakh jk hjkh jkdh </div>
           <div>hwa</div>
           <div>hwa</div>

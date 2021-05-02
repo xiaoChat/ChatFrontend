@@ -30,6 +30,21 @@ module.exports = [
     }
   },
   {
+    url: `/user/register`,
+    type: "post",
+    response: () => {
+      const { items, token } = data.items;
+      return {
+        code: 200,
+        msg: "success",
+        data: {
+          token: token,
+          userinfo: items
+        }
+      };
+    }
+  },
+  {
     url: `/user/add`,
     type: "post",
     response: () => {

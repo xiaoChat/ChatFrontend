@@ -23,5 +23,13 @@ export default {
     name: "登录",
     username: "用户名",
     password: "密码"
+  },
+  rule: {
+    username: {
+      required: "用户名必填!"
+    },
+    password: {
+      required: "密码必填!"
+    }
   }
 };

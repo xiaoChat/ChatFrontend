@@ -1,15 +1,34 @@
-import { defineComponent } from "vue";
+import { ElFormItemContext } from "element-plus/lib/el-form";
+import { defineComponent, ref } from "vue";
 import getUserComposables from "./composables/user";
 import styles from "./Login.module.scss";
 
 export default defineComponent({
   name: "Login",
   setup() {
-    const { proxy, user, onSubmitLogin, gotoRegister } = getUserComposables();
+    const loginForm = ref<ElFormItemContext>();
+    const {
+      proxy,
+      user,
+      rules,
+      onSubmitLogin,
+      gotoRegister
+    } = getUserComposables();
 
-    const onSubmit = onSubmitLogin;
+    const onSubmit = () => {
+      (loginForm.value as ElFormItemContext).validate(undefined, v => {
+        if (v) {
+          onSubmitLogin();
+        }
+      });
+    };
 
-    const goto = gotoRegister;
+    // 监听enter事件
+    const onEnter = (e: KeyboardEvent) => {
+      if (e.key == "Enter") {
+        onSubmit();
+      }
+    };
 
     return () => (
       <>
@@ -20,11 +39,16 @@ export default defineComponent({
           <el-col sm={2}></el-col>
           <el-col sm={4}>
             <h1>{proxy.$t("login.name")}</h1>
-            <el-form onSubmit={goto}>
-              <el-form-item label={proxy.$t("login.username")}>
+            <el-form
+              ref={loginForm}
+              model={user.value}
+              rules={rules.value}
+              onKeyup={onEnter}
+            >
+              <el-form-item label={proxy.$t("login.username")} prop="username">
                 <el-input type="text" v-model={user.value.username}></el-input>
               </el-form-item>
-              <el-form-item label={proxy.$t("login.password")}>
+              <el-form-item label={proxy.$t("login.password")} prop="password">
                 <el-input
                   type="password"
                   v-model={user.value.password}
@@ -34,7 +58,7 @@ export default defineComponent({
                 <el-button type="primary" onClick={onSubmit}>
                   {proxy.$t("button.login")}
                 </el-button>
-                <el-button onClick={goto}>
+                <el-button onClick={gotoRegister}>
                   {proxy.$t("button.register")}
                 </el-button>
               </el-form-item>
