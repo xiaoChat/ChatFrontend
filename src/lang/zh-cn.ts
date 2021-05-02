@@ -18,5 +18,10 @@ export default {
     email: "邮箱",
     username: "用户名",
     password: "密码"
+  },
+  login: {
+    name: "登录",
+    username: "用户名",
+    password: "密码"
   }
 };

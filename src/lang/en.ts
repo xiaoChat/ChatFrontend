@@ -18,5 +18,10 @@ export default {
     email: "Email",
     username: "Username",
     password: "Password"
+  },
+  login: {
+    name: "Login",
+    username: "Username",
+    password: "Password"
   }
 };

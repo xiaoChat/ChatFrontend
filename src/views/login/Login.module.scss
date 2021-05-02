@@ -10,4 +10,9 @@
 
 .left {
   background: $primary;
+  text-align: center;
+  img {
+    width: 600px;
+    max-width: 100%;
+  }
 }

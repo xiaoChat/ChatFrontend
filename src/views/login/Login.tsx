@@ -1,5 +1,6 @@
 import { defineComponent } from "vue";
 import getUserComposables from "./composables/user";
+import styles from "./Login.module.scss";
 
 export default defineComponent({
   name: "Login",
@@ -12,15 +13,18 @@ export default defineComponent({
 
     return () => (
       <>
-        <el-row>
-          <el-col sm={18}>LspChat</el-col>
+        <el-row class={styles.show}>
+          <el-col class={styles.left} sm={16}>
+            <img src={require("@/assets/lspchat-600.png")} alt="" />
+          </el-col>
+          <el-col sm={2}></el-col>
           <el-col sm={4}>
             <h1>{proxy.$t("login.name")}</h1>
             <el-form onSubmit={goto}>
               <el-form-item label={proxy.$t("login.username")}>
                 <el-input type="text" v-model={user.value.username}></el-input>
               </el-form-item>
-              <el-form-item label="密码">
+              <el-form-item label={proxy.$t("login.password")}>
                 <el-input
                   type="password"
                   v-model={user.value.password}
@@ -28,9 +32,11 @@ export default defineComponent({
               </el-form-item>
               <el-form-item>
                 <el-button type="primary" onClick={onSubmit}>
-                  登录
+                  {proxy.$t("button.login")}
                 </el-button>
-                <el-button onClick={goto}>注册</el-button>
+                <el-button onClick={goto}>
+                  {proxy.$t("button.register")}
+                </el-button>
               </el-form-item>
             </el-form>
           </el-col>

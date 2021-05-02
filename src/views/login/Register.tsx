@@ -11,7 +11,7 @@ export default defineComponent({
       <>
         <el-row class={styles.show}>
           <el-col class={styles.left} sm={16}>
-            LspChat
+            <img src={require("@/assets/lspchat-600.png")} alt="" />
           </el-col>
           <el-col sm={2}></el-col>
           <el-col sm={4}>
@@ -21,7 +21,7 @@ export default defineComponent({
                 <el-input type="text" vModel={user.value.username}></el-input>
               </el-form-item>
               <el-form-item label={proxy.$t("register.email")}>
-                <el-input type="text" vModel={user.value.username}></el-input>
+                <el-input type="text" vModel={user.value.email}></el-input>
               </el-form-item>
               <el-form-item label={proxy.$t("register.password")}>
                 <el-input
