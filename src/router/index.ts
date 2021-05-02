@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import MainLayout from "../layout/MainLayout";
+import MainLayout from "@/layout/MainLayout";
+import ForumLayout from "@/layout/ForumLayout";
+import ToolLayout from "@/layout/ToolLayout";
 import { afterEach, beforeEach } from "./routerHook";
 
 const routes: Array<RouteRecordRaw> = [
@@ -24,38 +26,43 @@ const routes: Array<RouteRecordRaw> = [
     component: MainLayout,
     children: [
       {
-        path: "/",
-        name: "homeIndex",
-        component: () => import("@/views/login/Register")
-      },
-      {
-        path: "about",
-        name: "HomeAbout",
-        component: () => import("@/views/About")
-      },
-      {
-        path: "ref",
-        name: "HomeRef",
-        component: () => import("@/views/Ref")
-      },
-      {
-        path: "apidemo",
-        name: "HomeApiDemo",
-        component: () => import("@/views/ApiDemo")
-      },
-      {
-        path: "register",
-        name: "HomeUsersregister",
-        component: () => import("@/views/login/Register")
+        path: "",
+        name: "HomeIndex",
+        component: () =>
+          import(/* webpackChunkName: "home" */ "@/views/home/Index")
       }
     ]
   },
   {
+    path: "/forum",
+    name: "Forum",
+    component: ForumLayout,
+    children: [
+      {
+        path: "",
+        name: "ForumIndex",
+        component: () =>
+          import(/* webpackChunkName: "Forum" */ "@/views/forum/Index")
+      }
+    ]
+  },
+  {
+    path: "/tool",
+    name: "Tool",
+    component: ToolLayout,
+    children: [
+      {
+        path: "",
+        name: "ToolIndex",
+        component: () =>
+          import(/* webpackChunkName: "Tool" */ "@/views/tool/Index")
+      }
+    ]
+  },
+  // 后续废弃
+  {
     path: "/about",
     name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ "@/views/About")
   },
   {

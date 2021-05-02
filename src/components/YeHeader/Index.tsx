@@ -29,21 +29,27 @@ export default defineComponent({
           active-text-color="#ffd04b"
         >
           {/* left */}
-          <el-menu-item disabled class={styles.opacity0}>
-            <img src={require("@/assets/lspchat.png")} alt="" />
-          </el-menu-item>
+          <div class={styles.opacity0}>
+            <img src={require("@/assets/lspchat.png")} alt="LspChat" />
+          </div>
           <el-menu-item
             index={"chat"}
-            onClick={() => proxy.$router.push({ name: "Home" })}
+            onClick={() => proxy.$router.push({ name: "HomeIndex" })}
           >
             <i class="el-icon-chat-round"></i>
             <slot>{proxy.$t("nav.chat")}</slot>
           </el-menu-item>
-          <el-menu-item index={"forum"}>
+          <el-menu-item
+            index={"forum"}
+            onClick={() => proxy.$router.push({ name: "ForumIndex" })}
+          >
             <i class="el-icon-chat-line-square"></i>
             <slot>{proxy.$t("nav.forum")}</slot>
           </el-menu-item>
-          <el-menu-item index={"tool"}>
+          <el-menu-item
+            index={"tool"}
+            onClick={() => proxy.$router.push({ name: "ToolIndex" })}
+          >
             <i class="el-icon-menu"></i>
             <slot>{proxy.$t("nav.tool")}</slot>
           </el-menu-item>
@@ -73,8 +79,8 @@ export default defineComponent({
               title: () => "Yexk"
             }}
           >
-            <el-menu-item index="2-1">{}</el-menu-item>
-            <el-menu-item index="2-1">{}</el-menu-item>
+            <el-menu-item index="2-1">{proxy.$t("nav.profile")}</el-menu-item>
+            <el-menu-item index="2-1">{proxy.$t("nav.logout")}</el-menu-item>
           </el-submenu>
         </el-menu>
       </>
