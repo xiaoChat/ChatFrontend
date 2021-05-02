@@ -1,4 +1,5 @@
 import store from "@/store";
+import { actions } from "@/store/actions";
 import { Router } from "vue-router";
 
 export function beforeEach(router: Router) {
@@ -10,7 +11,7 @@ export function beforeEach(router: Router) {
     } else {
       _f = true;
     }
-    store.dispatch("updateShowHeader", _f);
+    store.dispatch(actions.updateShowHeader.name, _f);
     next();
   });
 }
