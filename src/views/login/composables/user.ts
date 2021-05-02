@@ -15,6 +15,7 @@ export default function getUserComposables() {
 
   const user = ref<UserData>({
     username: "",
+    email: "",
     password: ""
   });
 

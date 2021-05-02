@@ -1,15 +1,16 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import MainLayout from "../layout/MainLayout";
+import { afterEach, beforeEach } from "./routerHook";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/login",
-    name: "login",
+    name: "Login",
     component: () => import("@/views/login/Login")
   },
   {
     path: "/register",
-    name: "register",
+    name: "Register",
     component: () => import("@/views/login/Register")
   },
   {
@@ -23,8 +24,28 @@ const routes: Array<RouteRecordRaw> = [
     component: MainLayout,
     children: [
       {
-        path: "/users/register",
-        name: "usersregister",
+        path: "/",
+        name: "homeIndex",
+        component: () => import("@/views/login/Register")
+      },
+      {
+        path: "about",
+        name: "HomeAbout",
+        component: () => import("@/views/About")
+      },
+      {
+        path: "ref",
+        name: "HomeRef",
+        component: () => import("@/views/Ref")
+      },
+      {
+        path: "apidemo",
+        name: "HomeApiDemo",
+        component: () => import("@/views/ApiDemo")
+      },
+      {
+        path: "register",
+        name: "HomeUsersregister",
         component: () => import("@/views/login/Register")
       }
     ]
@@ -53,5 +74,8 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 });
+
+beforeEach(router);
+afterEach(router);
 
 export default router;

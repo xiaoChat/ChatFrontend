@@ -10,11 +10,17 @@ export default defineComponent({
     return () => (
       <>
         <el-row class={styles.show}>
-          <el-col sm={18}>LspChat</el-col>
+          <el-col class={styles.left} sm={16}>
+            LspChat
+          </el-col>
+          <el-col sm={2}></el-col>
           <el-col sm={4}>
             <h1>{proxy.$t("register.name")}</h1>
             <el-form>
               <el-form-item label={proxy.$t("register.username")}>
+                <el-input type="text" vModel={user.value.username}></el-input>
+              </el-form-item>
+              <el-form-item label={proxy.$t("register.email")}>
                 <el-input type="text" vModel={user.value.username}></el-input>
               </el-form-item>
               <el-form-item label={proxy.$t("register.password")}>

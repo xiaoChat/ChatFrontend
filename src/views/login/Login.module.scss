@@ -1,10 +1,13 @@
-/* echart */
+/* login */
+.show {
+  height: 100vh;
+}
 .echart {
-  background-color: $red;
+  background-color: $danger;
   width: 400px;
   height: 400px;
 }
 
-.show {
-  color: $red;
+.left {
+  background: $primary;
 }
