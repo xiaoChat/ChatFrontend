@@ -17,6 +17,7 @@ export default defineComponent({
 
     const onSubmit = () => {
       // 这里先用any, element-plus的types文件有问题。
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (loginForm.value as any).validate((v: any) => {
         if (v) {
           onSubmitLogin();
