@@ -16,7 +16,8 @@ export default defineComponent({
     } = getUserComposables();
 
     const onSubmit = () => {
-      (loginForm.value as ElFormItemContext).validate(undefined, v => {
+      // 这里先用any, element-plus的types文件有问题。
+      (loginForm.value as any).validate((v: any) => {
         if (v) {
           onSubmitLogin();
         }

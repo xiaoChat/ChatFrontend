@@ -5,7 +5,7 @@ import {
   ComponentInternalInstance,
   ComponentPublicInstance,
   getCurrentInstance,
-  onMounted,
+  onBeforeMount,
   ref
 } from "vue";
 
@@ -21,7 +21,7 @@ export default function getUserComposables() {
 
   const rules = ref();
 
-  onMounted(() => {
+  onBeforeMount(() => {
     rules.value = {
       username: [
         {
