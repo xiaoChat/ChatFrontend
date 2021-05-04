@@ -1,0 +1,83 @@
+.contianer {
+  height: 100%;
+  .header {
+    background-color: $secondary;
+    color: #f3f3f3;
+    .title {
+      height: inherit;
+      padding: 0.5rem 1rem 0;
+      display: flex;
+      align-items: center;
+      h3 {
+        padding-left: 0.5rem;
+      }
+    }
+    .tool {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      a {
+        cursor: pointer;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
+      }
+      a:hover {
+        color: $main;
+      }
+    }
+  }
+  .main {
+    height: 96%;
+    .left {
+      background-color: #f5f6f7;
+      padding: 5px;
+      height: 100%;
+      .main {
+        max-height: 90%;
+        overflow-y: auto;
+      }
+      .msg {
+        display: flex;
+        .avatar {
+          padding: 0 0.4rem;
+        }
+        .name {
+          span {
+            color: var(--bs-gray);
+            padding: 0 0.1rem;
+            font-size: 0.5rem;
+          }
+        }
+        .box {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+        .content {
+          background-color: var(--bs-white);
+          border-radius: 5px;
+          max-width: 80%;
+          padding: 0.5rem;
+        }
+      }
+      .self {
+        .box {
+          align-items: flex-end;
+        }
+        .content {
+          background-color: var(--bs-primary);
+          color: var(--bs-white);
+        }
+      }
+      .input {
+        border: 1px solid var(--bs-gray);
+        height: 10%;
+        width: 100%;
+      }
+    }
+    .right {
+      background: var(--bs-white);
+    }
+  }
+}

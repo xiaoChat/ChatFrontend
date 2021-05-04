@@ -30,6 +30,12 @@ const routes: Array<RouteRecordRaw> = [
         name: "HomeIndex",
         component: () =>
           import(/* webpackChunkName: "home" */ "@/views/home/Index")
+      },
+      {
+        path: "channel",
+        name: "HomeChannel",
+        component: () =>
+          import(/* webpackChunkName: "home" */ "@/views/home/channel/Index")
       }
     ]
   },
