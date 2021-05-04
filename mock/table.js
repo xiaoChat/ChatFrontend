@@ -21,7 +21,7 @@ module.exports = [
       const { items, token } = data.items;
       return {
         code: 200,
-        msg: "success",
+        message: "success",
         data: {
           token: token,
           userinfo: items
@@ -36,7 +36,7 @@ module.exports = [
       const { items, token } = data.items;
       return {
         code: 200,
-        msg: "success",
+        message: "success",
         data: {
           token: token,
           userinfo: items
@@ -50,7 +50,7 @@ module.exports = [
     response: () => {
       return {
         code: 200,
-        msg: "success",
+        message: "success",
         data: {
           success: "success"
         }

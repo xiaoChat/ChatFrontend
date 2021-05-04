@@ -1,72 +1,32 @@
 import { defineComponent, onMounted, ref } from "vue";
 import styles from "./Index.module.scss";
+import ChatMessage from "@/components/ChatMessage/Index";
 
 export default defineComponent({
   name: "HomeChannel",
-  data() {
-    return {
-      name: "Yexk"
-    };
-  },
   setup() {
     const box = ref<HTMLElement>();
-    const _msg = (
-      <div class={styles.msg}>
-        <div class={styles.avatar}>
-          <el-avatar
-            shape="square"
-            size={32}
-            src={require("@/assets/logo.png")}
-          >
-            YM
-          </el-avatar>
-        </div>
-        <div class={styles.box}>
-          <div class={styles.name}>
-            <span>[新手]</span>
-            <span>Yexk_M</span>
-          </div>
-          <p class={styles.content}>
-            阿士大夫撒大发生 ahflaskdhfl hlasfh ksadjlhfdkjhf adjksh kjldh daks
-            阿士大夫撒大发生 ahflaskdhfl hlasfh ksadjlhfdkjhf adjksh kjldh daks
-            阿士大夫撒大发生 ahflaskdhfl hlasfh ksadjlhfdkjhf adjksh kjldh daks
-            阿士大夫撒大发生 ahflaskdhfl hlasfh ksadjlhfdkjhf adjksh kjldh daks
-            阿士大夫撒大发生 ahflaskdhfl hlasfh ksadjlhfdkjhf adjksh kjldh daks
-            hdfkla hlkdash jkas hjkf dhjl hlas h ljkhlk
-          </p>
-        </div>
-      </div>
-    );
-    const _selfMsg = (
-      <div class={[styles.msg, styles.self]}>
-        <div class={styles.box}>
-          <div class={styles.name}>
-            <span>[新手]</span>
-            <span>Yexk_M</span>
-          </div>
-          <p class={styles.content}>
-            hdfkla hlkdash jkas hjkf dhjl hlas h ljkhlk
-          </p>
-        </div>
-        <div class={styles.avatar}>
-          <el-avatar
-            shape="square"
-            size={32}
-            src={require("@/assets/logo.png")}
-          >
-            YM
-          </el-avatar>
-        </div>
-      </div>
-    );
-    const msg: JSX.Element[] = [];
-    for (let i = 0; i < 10; i++) {
-      if (i % 2 == 0) {
-        msg.push(_selfMsg);
+    const lists = [
+      {
+        avatar: "https://v3.cn.vuejs.org/logo.png",
+        title: "[新手]",
+        name: "Yexk",
+        msg: "123123123"
+      },
+      {
+        avatar: "https://v3.cn.vuejs.org/logo.png",
+        title: "[新手]",
+        name: "Yexk_M",
+        msg: "123123123sa fsdj dhslj hflasdh as hfljsadh fwie hksjafh "
+      },
+      {
+        avatar: "https://v3.cn.vuejs.org/logo.png",
+        title: "[新手]",
+        name: "Yexk_M",
+        msg:
+          "123123123sa fsdj dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwie hksjafh "
       }
-      msg.push(_msg);
-    }
-
+    ];
     onMounted(() => {
       const tes = (box.value as HTMLElement).children[0].children[0];
       tes.scrollTop = tes.scrollHeight;
@@ -107,7 +67,20 @@ export default defineComponent({
           <el-row class={styles.main}>
             <el-col sm={16} class={styles.left}>
               <div ref={box} class={styles.main}>
-                <el-scrollbar>{msg}</el-scrollbar>
+                <el-scrollbar>
+                  {lists.map((v, k) => {
+                    return (
+                      <ChatMessage
+                        isSelf={k % 2 == 0}
+                        name={v.name}
+                        avatar={v.avatar}
+                        v-slots={{
+                          default: () => v.msg
+                        }}
+                      />
+                    );
+                  })}
+                </el-scrollbar>
               </div>
               <div class={styles.input}>
                 <textarea name="" id=""></textarea>

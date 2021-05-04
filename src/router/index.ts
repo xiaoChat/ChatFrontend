@@ -67,11 +67,6 @@ const routes: Array<RouteRecordRaw> = [
   },
   // 后续废弃
   {
-    path: "/about",
-    name: "About",
-    component: () => import(/* webpackChunkName: "about" */ "@/views/About")
-  },
-  {
     path: "/ref",
     name: "Ref",
     component: () => import("@/views/Ref")

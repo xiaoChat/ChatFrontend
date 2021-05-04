@@ -8,7 +8,6 @@ export const actions: YeAction<YeState, YeState> = {
     context: ActionContext<YeState, YeState>,
     showHeader: boolean
   ) {
-    console.log("action:123123");
     context.commit(mutations.updateShowHeader.name, showHeader);
   }
 };

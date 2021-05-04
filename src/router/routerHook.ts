@@ -4,7 +4,6 @@ import { Router } from "vue-router";
 
 export function beforeEach(router: Router) {
   router.beforeEach((to, from, next) => {
-    console.log("before", to);
     let _f = true;
     if (to.name == "Register" || to.name == "Login") {
       _f = false;

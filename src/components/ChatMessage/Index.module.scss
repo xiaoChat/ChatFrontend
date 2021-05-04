@@ -1,0 +1,33 @@
+.msg {
+  display: flex;
+  .avatar {
+    padding: 0 0.4rem;
+  }
+  .name {
+    span {
+      color: var(--bs-gray);
+      padding: 0 0.1rem;
+      font-size: 0.5rem;
+    }
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .content {
+    background-color: var(--bs-white);
+    border-radius: 5px;
+    max-width: 80%;
+    padding: 0.5rem;
+  }
+}
+.self {
+  .box {
+    align-items: flex-end;
+  }
+  .content {
+    background-color: var(--bs-primary);
+    color: var(--bs-white);
+  }
+}
