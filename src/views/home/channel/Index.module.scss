@@ -38,9 +38,28 @@
         overflow-y: auto;
       }
       .input {
-        border: 1px solid var(--bs-gray);
         height: 10%;
         width: 100%;
+        textarea {
+          resize: none;
+        }
+        .send {
+          padding-top: 0.2rem;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          a {
+            cursor: pointer;
+            padding: 0 0.5rem;
+          }
+          div:nth-of-type(1) {
+            flex-grow: 1;
+          }
+          div:nth-of-type(2) {
+            text-align: right;
+            flex-grow: 1;
+          }
+        }
       }
     }
     .right {

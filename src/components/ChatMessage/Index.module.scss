@@ -12,6 +12,7 @@
   }
   .box {
     display: flex;
+    align-items: flex-start;
     flex-direction: column;
     width: 100%;
   }
@@ -20,6 +21,9 @@
     border-radius: 5px;
     max-width: 80%;
     padding: 0.5rem;
+    p {
+      margin-bottom: 0;
+    }
   }
 }
 .self {
