@@ -1,0 +1,23 @@
+.chatRoom {
+  width: 100%;
+  height: 100%;
+  background-color: $main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-main {
+    width: 100%;
+    height: 100%;
+    background-color: $testColor;
+    display: flex;
+    // &-l {
+    // }
+  }
+  @media screen and (min-width: $lettleWidth) {
+    &-main {
+      width: 70%;
+      height: 80%;
+      background-color: rgb(174, 231, 15);
+    }
+  }
+}

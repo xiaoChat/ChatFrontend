@@ -12,13 +12,13 @@ export default defineComponent({
     const inputText = ref<string>();
     const lists = ref([
       {
-        avatar: "https://v3.cn.vuejs.org/logo.png",
+        avatar: "https://v3.cn.vuejs.org/logo.jpg",
         title: "[新手]",
         name: "Yexk",
         msg: "123123123"
       },
       {
-        avatar: "https://v3.cn.vuejs.org/logo.png",
+        avatar: "https://v3.cn.vuejs.org/logo.jpg",
         title: "[新手]",
         name: "Yexk_M",
         msg: escape(
@@ -26,41 +26,41 @@ export default defineComponent({
         )
       },
       {
-        avatar: "https://v3.cn.vuejs.org/logo.png",
+        avatar: "https://v3.cn.vuejs.org/logo.jpg",
         title: "[新手]",
         name: "Yexk_M",
         msg:
           "123123123sa fsdj dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwie hksjafh "
       },
       {
-        avatar: "https://v3.cn.vuejs.org/logo.png",
+        avatar: "https://v3.cn.vuejs.org/logo.jpg",
         title: "[新手]",
         name: "Yexk_M",
         msg:
           "123123123sa fsdj dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwie hksjafh "
       },
       {
-        avatar: "https://v3.cn.vuejs.org/logo.png",
+        avatar: "https://v3.cn.vuejs.org/logo.jpg",
         title: "[新手]",
         name: "Yexk_M",
         msg:
           "123123123sa fsdj dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwie hksjafh "
       },
       {
-        avatar: "https://v3.cn.vuejs.org/logo.png",
+        avatar: "https://v3.cn.vuejs.org/logo.jpg",
         title: "[新手]",
         name: "Yexk_M",
         msg:
           "123123123sa fsdj dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwiej dhslj hflasdh as hfljsadh fwie hksjafh "
       },
       {
-        avatar: "https://v3.cn.vuejs.org/logo.png",
+        avatar: "https://v3.cn.vuejs.org/logo.jpg",
         title: "[新手]",
         name: "Yexk_M",
         msg: "123123123sa fsdj dhslj hflasdh as hfljsadh fwie hksjafh "
       },
       {
-        avatar: "https://v3.cn.vuejs.org/logo.png",
+        avatar: "https://v3.cn.vuejs.org/logo.jpg",
         title: "[新手]",
         name: "Yexk_M",
         msg:
@@ -92,7 +92,7 @@ export default defineComponent({
 
     const sendMessage = () => {
       lists.value.push({
-        avatar: "https://v3.cn.vuejs.org/logo.png",
+        avatar: "https://v3.cn.vuejs.org/logo.jpg",
         title: "[新手]",
         name: "Yexk",
         msg: marked(escape(inputText.value as string))
@@ -117,7 +117,7 @@ export default defineComponent({
                 <el-avatar
                   shape="square"
                   size={36}
-                  src={require("@/assets/logo.png")}
+                  src={require("@/assets/logo.jpg")}
                 ></el-avatar>
               </div>
               <h3>前端交流群</h3>

@@ -21,6 +21,11 @@ const routes: Array<RouteRecordRaw> = [
     redirect: "/home"
   },
   {
+    path: "/chatRoom",
+    name: "ChatRoom",
+    component: () => import("@/views/chatRoom")
+  },
+  {
     path: "/home",
     name: "Home",
     component: MainLayout,

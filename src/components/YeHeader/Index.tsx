@@ -34,7 +34,7 @@ export default defineComponent({
           </div>
           <el-menu-item
             index={"chat"}
-            onClick={() => proxy.$router.push({ name: "HomeIndex" })}
+            onClick={() => proxy.$router.push({ name: "ChatRoom" })}
           >
             <i class="el-icon-chat-round"></i>
             <slot>{proxy.$t("nav.chat")}</slot>
